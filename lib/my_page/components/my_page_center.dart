@@ -17,7 +17,7 @@ class MyPageCenterView extends StatelessWidget {
             'Bruno Pham',
             style: TextStyle(
               fontSize: 20.sp,
-              color: Color(0xFF242424),
+              color: const Color(0xFF242424),
               fontWeight: FontWeight.w700
             ),
           ),
@@ -26,14 +26,14 @@ class MyPageCenterView extends StatelessWidget {
             'Da Nang, Vietnam',
             style: TextStyle(
               fontSize: 16.sp,
-              color: Color(0xFF8F90A7),
+              color: const Color(0xFF8F90A7),
             ),
           ),
           SizedBox(height: 20.h,),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6.h),
-              color: Color(0xFFF6F7F9)
+              color: const Color(0xFFF6F7F9)
             ),
             padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 10.w),
             child: Row(
@@ -50,9 +50,9 @@ class MyPageCenterView extends StatelessWidget {
                         Text(
                           '220',
                           style: TextStyle(
-                              fontSize: 16.sp,
-                              color: Color(0xFF242424),
-                              fontWeight: FontWeight.w700
+                            fontSize: 16.sp,
+                            color: const Color(0xFF242424),
+                            fontWeight: FontWeight.w700
                           ),
                         ),
                         SizedBox(width: 5.w,),
@@ -60,7 +60,7 @@ class MyPageCenterView extends StatelessWidget {
                           'Followers',
                           style: TextStyle(
                             fontSize: 16.sp,
-                            color: Color(0xFFBDBDBD),
+                            color: const Color(0xFFBDBDBD),
                           ),
                         )
                       ],
@@ -75,7 +75,7 @@ class MyPageCenterView extends StatelessWidget {
                         '150',
                         style: TextStyle(
                           fontSize: 16.sp,
-                          color: Color(0xFF242424),
+                          color: const Color(0xFF242424),
                           fontWeight: FontWeight.w700
                         ),
                       ),
@@ -84,7 +84,7 @@ class MyPageCenterView extends StatelessWidget {
                         'Following',
                         style: TextStyle(
                           fontSize: 16.sp,
-                          color: Color(0xFFBDBDBD),
+                          color: const Color(0xFFBDBDBD),
                         ),
                       )
                     ],

@@ -34,38 +34,38 @@ class MyPageGridItem extends StatelessWidget {
                     child: Column(
                       children: [
                         Expanded(
-                            child: Row(
-                              children: [
-                                Expanded(
-                                    child: Image.asset(
-                                      'images/discover/detail_man_1.png',
-                                    )
-                                ),
-                                Expanded(
-                                    child: Image.asset(
-                                      'images/discover/detail_woman.png',
-                                      fit: BoxFit.cover,
-                                    )
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Image.asset(
+                                  'images/discover/detail_man_1.png',
                                 )
-                              ],
-                            )
+                              ),
+                              Expanded(
+                                child: Image.asset(
+                                  'images/discover/detail_woman.png',
+                                  fit: BoxFit.cover,
+                                )
+                              )
+                            ],
+                          )
                         ),
                         Expanded(
-                            child: Row(
-                              children: [
-                                Expanded(
-                                    child: Image.asset(
-                                      'images/discover/detail_man_1.png',
-                                    )
-                                ),
-                                Expanded(
-                                    child: Image.asset(
-                                      'images/discover/detail_woman.png',
-                                      fit: BoxFit.cover,
-                                    )
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Image.asset(
+                                  'images/discover/detail_man_1.png',
                                 )
-                              ],
-                            )
+                              ),
+                              Expanded(
+                                child: Image.asset(
+                                  'images/discover/detail_woman.png',
+                                  fit: BoxFit.cover,
+                                )
+                              )
+                            ],
+                          )
                         )
                       ],
                     ),
@@ -75,30 +75,30 @@ class MyPageGridItem extends StatelessWidget {
                   width: 158.w,
                   height: 158.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.h),
-                      color: Color(0x50333333)
+                    borderRadius: BorderRadius.circular(10.h),
+                    color: Color(0x50333333)
                   ),
                   alignment: Alignment.center,
                   child: Text(
                     itemModel.title,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 14.sp,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700
+                      fontSize: 14.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700
                     ),
                   ),
                 )
               ],
             ),
             Expanded(
-                child: Text(
-                  itemModel.msg,
-                  style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Color(0xFF828282)
-                  ),
-                )
+              child: Text(
+                itemModel.msg,
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  color: Color(0xFF828282)
+                ),
+              )
             )
           ],
         ),

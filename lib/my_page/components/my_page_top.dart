@@ -9,7 +9,7 @@ class MyPageTopView extends StatelessWidget {
     return Container(
       height: 190.h,
       alignment: Alignment.bottomCenter,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage('images/askpage/ask_top_back.png'),
           fit: BoxFit.fitWidth,
