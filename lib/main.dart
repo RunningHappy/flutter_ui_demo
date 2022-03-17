@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluro/fluro.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: const Color(0xFFF5F5F5),
           /// 对话框背景颜色
           dialogBackgroundColor: Colors.white,
-          /// 设置App导航栏主题
+          // / 设置App导航栏主题
           appBarTheme: const AppBarTheme(
             elevation: 0,
             centerTitle: true,

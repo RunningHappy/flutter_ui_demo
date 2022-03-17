@@ -15,6 +15,7 @@ CommonSearchBar(
 
   return AppBar(
     backgroundColor: Colors.white,
+    elevation: 0,
     leadingWidth: 0,
     title: showRightBtn! ? Row(
       children: [

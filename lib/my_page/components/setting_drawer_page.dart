@@ -99,7 +99,10 @@ class _SettingDrawerPageState extends State<SettingDrawerPage> {
                   padding: EdgeInsets.only(top: 8.h,bottom: 30.h),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: settingList.map<Widget>((e) => SettingLineItem(title: e,)).toList(),
+                    children: settingList.map<Widget>((e) => SettingLineItem(title: e,callBack: (){
+                      z.close!();
+                      NavigatorUtil.openWin(context, PageRoutes.settingChildPage);
+                    },)).toList(),
                   ),
                 ),
               ),

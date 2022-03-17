@@ -30,9 +30,15 @@ class _DiscoverDetailPageState extends State<DiscoverDetailPage> {
           opactity = 1;
         });
       }else{
-        setState(() {
-          opactity = listController.offset / 200.h;
-        });
+        if(listController.offset / 200.h >= 0){
+          setState(() {
+            opactity = listController.offset / 200.h;
+          });
+        }else{
+          setState(() {
+            opactity = 0;
+          });
+        }
       }
     });
   }
