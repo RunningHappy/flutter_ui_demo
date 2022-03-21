@@ -144,46 +144,92 @@ class _SettingChildPageState extends State<SettingChildPage> {
               ),
             ),
             SizedBox(height: 20.h,),
-            GestureDetector(
-              onTap: (){
-                NavigatorUtil.openWin(context, PageRoutes.heroNextPage);
-              },
-              child: Hero(
-                tag: 'heroTag',
-                child: IndexedStack(
-                  index: currentIndex,
-                  children: [
-                    Image.asset(
-                      'images/askpage/ask_content_1.png',
-                      width: 100.w,
-                    ),
-                    Image.asset(
-                      'images/askpage/ask_content_2.png',
-                      width: 100.w,
-                    ),
-                    Image.asset(
-                      'images/askpage/ask_content_3.png',
-                      width: 100.w,
-                    ),
-                    Image.asset(
-                      'images/askpage/ask_content_4.png',
-                      width: 100.w,
-                    ),
-                    Image.asset(
-                      'images/askpage/ask_content_1.png',
-                      width: 100.w,
-                    ),
-                    Image.asset(
-                      'images/askpage/ask_content_2.png',
-                      width: 100.w,
-                    ),
-                    Image.asset(
-                      'images/askpage/ask_content_3.png',
-                      width: 100.w,
-                    ),
-                  ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GestureDetector(
+                  onTap: (){
+                    NavigatorUtil.openWin(context, PageRoutes.heroNextPage);
+                  },
+                  child: Hero(
+                    tag: 'heroTag',
+                    child: IndexedStack(
+                      index: currentIndex,
+                      children: [
+                        Image.asset(
+                          'images/askpage/ask_content_1.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_2.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_3.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_4.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_1.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_2.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_3.png',
+                          width: 100.w,
+                        ),
+                      ],
+                    )
+                  ),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    NavigatorUtil.openWin(context, PageRoutes.heroNextPage);
+                  },
+                  child: Hero(
+                    tag: 'heroTag1',
+                    child: IndexedStack(
+                      index: currentIndex,
+                      children: [
+                        Image.asset(
+                          'images/askpage/ask_content_4.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_3.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_2.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_1.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_3.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_2.png',
+                          width: 100.w,
+                        ),
+                        Image.asset(
+                          'images/askpage/ask_content_1.png',
+                          width: 100.w,
+                        ),
+                      ],
+                    )
+                  ),
                 )
-              ),
+              ],
             )
           ],
         ),

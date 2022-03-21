@@ -73,8 +73,8 @@ class _SplashPageState extends State<SplashPage> {
               width: 162.w,
               height: 52.h,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.h),
-                  color: const Color.fromRGBO(208, 208, 208, 0.3)
+                borderRadius: BorderRadius.circular(30.h),
+                color: const Color.fromRGBO(208, 208, 208, 0.3)
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
