@@ -26,7 +26,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
       backgroundColor: Colors.white,
       appBar: CommonTansAppBar(0, (){
         NavigatorUtil.closeWin(context);
-      },title: 'Edit profile',fontSize: 20.sp,showBack: true,backIconColor: Colors.transparent),
+      },title: 'Edit Profile',fontSize: 20.sp,showBack: true,backIconColor: Colors.transparent),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

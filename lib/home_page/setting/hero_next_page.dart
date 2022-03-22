@@ -5,6 +5,7 @@ import 'package:new_project/common_widget/common_img_btn.dart';
 import 'package:new_project/common_widget/common_trans_appbar.dart';
 import 'package:new_project/utils/navigator_util.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:app_assembly/basic_library.dart';
 
 class HeroNextPage extends StatefulWidget {
   const HeroNextPage({Key? key}) : super(key: key);
@@ -21,12 +22,9 @@ class _HeroNextPageState extends State<HeroNextPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      backgroundColor: Colors.white,
-      appBar: CommonTansAppBar(opactity, (){
-        NavigatorUtil.closeWin(context);
-      },title: '@brunopham',fontSize: 14.sp,showBack: true,actions: [
+    return SlidingUpPanelView(
+      title: '@brunopham',
+      rightActions: [
         CommonImgBtn(imgStr: 'images/home/home_item_add.png',width: 24.h,callBack: (){
           _pc.open();
         },),
@@ -35,39 +33,30 @@ class _HeroNextPageState extends State<HeroNextPage> {
           _pc.close();
         },),
         SizedBox(width: 16.w,),
-      ]),
-      body: SlidingUpPanel(
-        controller: _pc,
-        renderPanelSheet: true,
-        panel: _floatingPanel(),
-        collapsed: _floatingCollapsed(),
-        minHeight: 30.h,
-        maxHeight: MediaQuery.of(context).size.height / 2,
-        margin: EdgeInsets.only(left: 8.w,right: 8.w),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(5.w),
-          topRight: Radius.circular(5.w)
-        ),
-        body: ListView(
-          padding: EdgeInsets.only(bottom: 35.h),
-          children: [
-            Hero(
-              tag: 'heroTag',
-              child: Image.asset(
-                'images/askpage/ask_content_1.png',
-                width: double.infinity,
-              )
-            ),
-            SizedBox(height: 10.h,),
-            Hero(
-              tag: 'heroTag1',
-              child: Image.asset(
-                'images/askpage/ask_content_2.png',
-                width: double.infinity,
-              )
+      ],
+      opactity: opactity,
+      backIconPath: 'images/discover/detail_back_icon.png',
+      topTapView: _floatingPanel(),
+      contentView: _floatingCollapsed(),
+      body: ListView(
+        padding: EdgeInsets.only(bottom: 35.h),
+        children: [
+          Hero(
+            tag: 'heroTag',
+            child: Image.asset(
+              'images/askpage/ask_content_1.png',
+              width: double.infinity,
             )
-          ],
-        ),
+          ),
+          SizedBox(height: 10.h,),
+          Hero(
+            tag: 'heroTag1',
+            child: Image.asset(
+              'images/askpage/ask_content_2.png',
+              width: double.infinity,
+            )
+          )
+        ],
       ),
     );
   }
