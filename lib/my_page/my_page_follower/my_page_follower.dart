@@ -99,7 +99,6 @@ class _MyPageFollowerState extends State<MyPageFollower> {
                 MyPageTopView(),
                 MyPageCenterView(),
                 CommonSegment(
-                  context: context,
                   titleList: titleList,
                   normalColor: Color(0xFFBDBDBD),
                   selectColor: Color(0xFF888BF4),

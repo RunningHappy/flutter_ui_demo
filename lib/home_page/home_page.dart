@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           children: [
             CommonSegment(
-              context: context,
               titleList: titleList,
               normalColor: Color(0xFFBDBDBD),
               selectColor: Color(0xFF888BF4),

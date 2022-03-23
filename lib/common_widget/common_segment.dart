@@ -8,7 +8,6 @@ class TitleModel {
 }
 
 class CommonSegment extends Container{
-  BuildContext context;
   List<TitleModel> titleList;
   double? fontSize;
   Color? normalColor;
@@ -19,7 +18,7 @@ class CommonSegment extends Container{
   double? itemHeight;
   double? height;
   Function(dynamic)? callBack;
-  CommonSegment({Key? key,this.height,required this.context,required this.titleList,this.itemWidth,this.itemHeight,this.fontSize,this.callBack,this.normalColor,this.selectColor,this.normalBackColor,this.selectBackColor,}) : super(key: key);
+  CommonSegment({Key? key,this.height,required this.titleList,this.itemWidth,this.itemHeight,this.fontSize,this.callBack,this.normalColor,this.selectColor,this.normalBackColor,this.selectBackColor,}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

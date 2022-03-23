@@ -113,7 +113,6 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin{
               MyPageTopView(),
               MyPageCenterView(),
               CommonSegment(
-                context: context,
                 titleList: titleList,
                 normalColor: Color(0xFFBDBDBD),
                 selectColor: Color(0xFF888BF4),

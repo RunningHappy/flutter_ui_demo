@@ -1,3 +1,4 @@
+import 'package:app_assembly/app_assembly.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,7 +6,6 @@ import 'package:new_project/common_widget/common_img_btn.dart';
 import 'package:new_project/common_widget/common_trans_appbar.dart';
 import 'package:new_project/utils/navigator_util.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:app_assembly/basic_library.dart';
 
 class HeroNextPage extends StatefulWidget {
   const HeroNextPage({Key? key}) : super(key: key);
@@ -19,6 +19,13 @@ class _HeroNextPageState extends State<HeroNextPage> {
   var opactity = 0.0;
 
   PanelController _pc = new PanelController();
+
+  List<String> imageList = [
+    'images/askpage/ask_content_1.png',
+    'images/askpage/ask_content_2.png',
+    'images/askpage/ask_content_3.png',
+    'images/askpage/ask_content_4.png'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +48,41 @@ class _HeroNextPageState extends State<HeroNextPage> {
       body: ListView(
         padding: EdgeInsets.only(bottom: 35.h),
         children: [
+          SizedBox(
+            height: 220.h,
+            child: CommonBanner(
+              imageList: imageList,
+              children: imageList.map((e) => Image.asset(
+                  e,
+                  fit: BoxFit.cover,
+                ),
+              ).toList(),
+              paginationPaddingH: 10.w,
+              paginationPaddingV: 10.h,
+              activePagination: Container(
+                width: 8.w,
+                height: 8.w,
+                margin: EdgeInsets.only(right: 5.w),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.w),
+                  color: Colors.redAccent
+                ),
+              ),
+              normalPagination: Container(
+                width: 8.w,
+                height: 8.w,
+                margin: EdgeInsets.only(right: 5.w),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.w),
+                  color: Colors.grey
+                ),
+              ),
+              tapImageBack: (index){
+
+              },
+            ),
+          ),
+          SizedBox(height: 10.h,),
           Hero(
             tag: 'heroTag',
             child: Image.asset(

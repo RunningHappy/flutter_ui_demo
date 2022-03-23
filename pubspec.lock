@@ -6,7 +6,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: e33de0ba3e28cab1103abb635a1f0ae9ce8bcf69
+      resolved-ref: "53047be1378f62a42948253f7381f515805fb786"
       url: "git@gitlab.56hswl.com:lmp/app_assembly.git"
     source: git
     version: "0.0.1"
@@ -209,6 +209,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.6.1"
+  flutter_swiper_plus:
+    dependency: transitive
+    description:
+      name: flutter_swiper_plus
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.4"
   flutter_test:
     dependency: "direct dev"
     description: flutter
