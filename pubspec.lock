@@ -6,7 +6,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "53047be1378f62a42948253f7381f515805fb786"
+      resolved-ref: "027540a7a3c608dbf2dfd8c87d4a703af3e7de22"
       url: "git@gitlab.56hswl.com:lmp/app_assembly.git"
     source: git
     version: "0.0.1"
@@ -387,6 +387,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.7.0"
+  photo_view:
+    dependency: "direct main"
+    description:
+      name: photo_view
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.13.0"
   platform:
     dependency: transitive
     description:
@@ -538,7 +545,7 @@ packages:
       name: synchronized
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.0.0"
+    version: "3.0.0+2"
   tapped:
     dependency: transitive
     description:

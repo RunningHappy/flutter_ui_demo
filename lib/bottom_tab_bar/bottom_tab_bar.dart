@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:ui';
+import 'package:app_assembly/app_assembly.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,88 +25,26 @@ class _BottomTabBarState extends State<BottomTabBar> {
   int _currentIndex = 0;
   DateTime? _lastPopTime;
   final List<Widget> _pageList = [HomePage(),DiscoverPage(),ActivityPage(),MyPage()];
-
+  final List<String> normalImage = ['images/bottombar/tab_bar_1_normal.png','images/bottombar/tab_bar_2_normal.png','images/bottombar/tab_bar_3_normal.png','images/bottombar/tab_bar_4_normal.png'];
+  final List<String> activeImage = ['images/bottombar/tab_bar_1_select.png','images/bottombar/tab_bar_2_select.png','images/bottombar/tab_bar_3_select.png','images/bottombar/tab_bar_4_select.png'];
+  final List<String> titles = ['首页','发现','消息','我的'];
   @override
   void initState() {
     super.initState();
-    setState(() {
-      _currentIndex = 0;
-    });
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
-
-  Future<bool> onWillPop() async {
-    if(_lastPopTime == null || DateTime.now().difference(_lastPopTime!) > const Duration(seconds: 2)) {
-      _lastPopTime = DateTime.now();
-      EasyLoading.showToast('再按一次退出');
-    } else {
-      _lastPopTime = DateTime.now();
-      // 退出app
-      // AppAndroidBackTop.backDeskTop();
-      await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-    }
-    return Future.value(false);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      extendBody: true,
-      body: _pageList[_currentIndex],
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        child: Image.asset(
-          'images/bottombar/tab_bar_center_icon.png',
-        ),
-        onPressed: (){
-
-        },
-      ),
-      bottomNavigationBar: Container(
-        height: 65.h,
-        color: Colors.transparent,
-        child: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          notchMargin: 6.h,
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              buildBarItem(0, _currentIndex),
-              buildBarItem(1, _currentIndex),
-              buildBarItem(-1, _currentIndex),
-              buildBarItem(2, _currentIndex),
-              buildBarItem(3, _currentIndex)
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  buildBarItem(int? index,int? selectIndex){
-    return Expanded(
-      child: GestureDetector(
-        onTap: (){
-          setState(() {
-            _currentIndex = index!;
-          });
-        },
-        child: index! == -1 ? Container() : Container(
-          color: Colors.transparent,
-          child: Image.asset(
-            selectIndex == index ? 'images/bottombar/tab_bar_${index + 1}_select.png' : 'images/bottombar/tab_bar_${index + 1}_normal.png',
-            width: 24.h,
-            height: 24.h,
-          ),
-        ),
-      )
+    return CenterFloatingBottomBar(
+      pageList: _pageList,
+      centerImage: 'images/bottombar/tab_bar_center_icon.png',
+      normalBarImage: normalImage,
+      activeBarImage: activeImage,
+      barTitleList: titles,
+      normalTitleSize: 10.sp,
+      activeTitleSize: 10.sp,
+      imageTitlePadding: 3.h,
+      imageWidth: 20.h,
     );
   }
 }

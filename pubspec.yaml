@@ -50,6 +50,8 @@ dependencies:
   flutter_zoom_drawer: ^2.3.1
   #底部悬停
   sliding_up_panel: ^2.0.0+1
+  #图片放大查看
+  photo_view: ^0.13.0
   app_assembly:
     git:
       url: git@gitlab.56hswl.com:lmp/app_assembly.git

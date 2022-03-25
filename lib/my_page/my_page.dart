@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:new_project/common_widget/common_empty_view.dart';
+import 'package:new_project/common_widget/common_see_image_view.dart';
 import 'package:new_project/common_widget/common_segment.dart';
 import 'package:new_project/common_widget/common_trans_appbar.dart';
 import 'package:new_project/my_page/components/my_page_center.dart';
@@ -13,6 +14,7 @@ import 'package:new_project/my_page/components/setting_header_view.dart';
 import 'package:new_project/my_page/components/setting_line_item.dart';
 import 'package:new_project/my_page/components/setting_logout_btn.dart';
 import 'package:new_project/router/page_routers.dart';
+import 'package:new_project/utils/bundle_util.dart';
 import 'package:new_project/utils/event_bus_utils.dart';
 import 'package:new_project/utils/navigator_util.dart';
 
@@ -139,11 +141,21 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin{
                 mainAxisSpacing: 15.w,
                 crossAxisSpacing: 15.h,
                 itemBuilder: (context, index) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(10.h),
-                    child: Image.asset(
-                      dataList1[index],
-                      width: double.infinity,
+                  return GestureDetector(
+                    onTap: (){
+                      CommonSeeImageView.preview(context, images: dataList1,initialIndex: index,downLoad: (clickIndex){
+                        print('点击下载');
+                      });
+                    },
+                    child: Hero(
+                      tag: index,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10.h),
+                        child: Image.asset(
+                          dataList1[index],
+                          width: double.infinity,
+                        ),
+                      )
                     ),
                   );
                 },

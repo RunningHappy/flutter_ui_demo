@@ -1,6 +1,7 @@
 import 'package:new_project/activity_page/activity_page.dart';
 import 'package:new_project/ask_page/ask_page.dart';
 import 'package:new_project/bottom_tab_bar/bottom_tab_bar.dart';
+import 'package:new_project/common_widget/common_see_image_view.dart';
 import 'package:new_project/discover_page/discover_detail/discover_detail.dart';
 import 'package:new_project/discover_page/discover_page.dart';
 import 'package:new_project/discover_page/search_page/discover_search_page.dart';
@@ -98,6 +99,6 @@ class PageRoutes {
     // SettingChildPage
     settingChildPage: PageBuilder(builder: (bundle) => const SettingChildPage()),
     // HeroNextPage
-    heroNextPage: PageBuilder(builder: (bundle) => const HeroNextPage())
+    heroNextPage: PageBuilder(builder: (bundle) => const HeroNextPage()),
   };
 }
