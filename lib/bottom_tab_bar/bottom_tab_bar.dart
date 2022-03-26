@@ -27,7 +27,8 @@ class _BottomTabBarState extends State<BottomTabBar> {
   final List<Widget> _pageList = [HomePage(),DiscoverPage(),ActivityPage(),MyPage()];
   final List<String> normalImage = ['images/bottombar/tab_bar_1_normal.png','images/bottombar/tab_bar_2_normal.png','images/bottombar/tab_bar_3_normal.png','images/bottombar/tab_bar_4_normal.png'];
   final List<String> activeImage = ['images/bottombar/tab_bar_1_select.png','images/bottombar/tab_bar_2_select.png','images/bottombar/tab_bar_3_select.png','images/bottombar/tab_bar_4_select.png'];
-  final List<String> titles = ['首页','发现','消息','我的'];
+  // final List<String> titles = ['首页','发现','消息','我的'];
+  final List<String> titles = [];
   @override
   void initState() {
     super.initState();
@@ -44,7 +45,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
       normalTitleSize: 10.sp,
       activeTitleSize: 10.sp,
       imageTitlePadding: 3.h,
-      imageWidth: 20.h,
+      imageWidth: 24.h,
     );
   }
 }

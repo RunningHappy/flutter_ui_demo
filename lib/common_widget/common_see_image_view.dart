@@ -2,6 +2,7 @@ import 'package:app_assembly/app_assembly.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
 class CommonImageView extends StatefulWidget {
@@ -75,17 +76,19 @@ class _CommonImageViewState extends State<CommonImageView> {
             scrollPhysics: const BouncingScrollPhysics(),
             builder: (BuildContext context, int index) {
               return widget.imageList[index].contains('http') || widget.imageList[index].contains('https') ? PhotoViewGalleryPageOptions(
+                heroAttributes: PhotoViewHeroAttributes(tag: index),
                 imageProvider: NetworkImage(
                   widget.imageList[index],
                 )
               ) : PhotoViewGalleryPageOptions(
+                heroAttributes: PhotoViewHeroAttributes(tag: index),
                 imageProvider: AssetImage(
                   widget.imageList[index],
                 ),
               );
             },
             itemCount: widget.imageList.length,
-            backgroundDecoration: const BoxDecoration(color: Colors.black),
+            backgroundDecoration: const BoxDecoration(color: Colors.transparent),
             pageController: PageController(initialPage: widget.currentIndex),
             onPageChanged: (index){
               setState(() {
@@ -103,75 +106,12 @@ class _CommonImageViewState extends State<CommonImageView> {
               child: Icon(
                 Icons.download_sharp,
                 color: Colors.white,
-                size: 24.sp,
+                size: 28.sp,
               ),
             )
           )
         ],
       )
-    );
-  }
-}
-
-class ImageItem extends StatefulWidget {
-  final String imageUrl;
-  final double minScale;
-  final double maxScale;
-  final Object heroTag;
-  const ImageItem({Key? key,required this.imageUrl,this.minScale = 0.5,this.maxScale = 3,required this.heroTag}) : super(key: key);
-
-  @override
-  _ImageItemState createState() => _ImageItemState();
-}
-
-class _ImageItemState extends State<ImageItem> {
-
-  late double scale = 1.0;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (
-          BuildContext context,
-          BoxConstraints constraints,
-      ){
-        return StreamBuilder(
-          builder: (
-            BuildContext context,
-            AsyncSnapshot snapshot,
-          ){
-            return GestureDetector(
-              onScaleUpdate: (ScaleUpdateDetails details){
-                if(details.scale >= widget.minScale && details.scale <= widget.maxScale){
-                  setState(() {
-                    scale = details.scale;
-                  });
-                }
-              },
-              child: Container(
-                child: Center(
-                  child: Transform(
-                    transform: Matrix4.identity()
-                    // ..translate(_offset.dx, _offset.dy)
-                      ..scale(scale, scale),
-                    alignment: Alignment.center,
-                    child: Hero(
-                        tag: widget.heroTag,
-                        child: widget.imageUrl.contains('http') ? CachedNetworkImage(
-                          imageUrl: widget.imageUrl,
-                          width: MediaQuery.of(context).size.width,
-                        ) : Image.asset(
-                          widget.imageUrl,
-                          width: MediaQuery.of(context).size.width,
-                        )
-                    ),
-                  ),
-                ),
-              ),
-            );
-          }
-        );
-      }
     );
   }
 }

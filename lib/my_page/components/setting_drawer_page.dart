@@ -5,8 +5,8 @@ import 'package:new_project/my_page/components/setting_header_view.dart';
 import 'package:new_project/my_page/components/setting_line_item.dart';
 import 'package:new_project/my_page/components/setting_logout_btn.dart';
 import 'package:new_project/router/page_routers.dart';
-import 'package:new_project/utils/event_bus_utils.dart';
 import 'package:new_project/utils/navigator_util.dart';
+import 'package:app_assembly/app_assembly.dart';
 
 class SettingDrawerPage extends StatefulWidget {
   final Widget mainBody;
