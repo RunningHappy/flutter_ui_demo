@@ -52,9 +52,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
                   Text(
                     'Last name',
                     style: TextStyle(
-                        fontSize: 16.sp,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400
+                      fontSize: 16.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400
                     ),
                   ),
                   SizedBox(height: 6.h,),
@@ -63,9 +63,9 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
                   Text(
                     'Email',
                     style: TextStyle(
-                        fontSize: 16.sp,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400
+                      fontSize: 16.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400
                     ),
                   ),
                   SizedBox(height: 6.h,),

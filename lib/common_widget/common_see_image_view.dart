@@ -118,14 +118,14 @@ class _CommonImageViewState extends State<CommonImageView> {
 
 class CommonSeeImageView {
   const CommonSeeImageView._();
-
   /// 预览一组图片
   static Future<T?> preview<T>(
-      BuildContext context, {
-        int initialIndex = 0,
-        required List<String> images,
-        required Function(int) downLoad,
-      }) {
+    BuildContext context, {
+      int initialIndex = 0,
+      required List<String> images,
+      required Function(int) downLoad,
+    }
+  ) {
     return Navigator.push(
       context,
       MaterialPageRoute(
