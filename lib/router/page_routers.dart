@@ -8,14 +8,15 @@ import 'package:new_project/discover_page/search_page/discover_search_page.dart'
 import 'package:new_project/home_page/home_detail/detail_msg_list/detail_msg_list.dart';
 import 'package:new_project/home_page/home_detail/home_detail.dart';
 import 'package:new_project/home_page/home_page.dart';
-import 'package:new_project/home_page/setting/hero_next_page.dart';
-import 'package:new_project/home_page/setting/setting_child_page.dart';
+import 'package:new_project/my_page/setting_profile/dart/hero_next_page.dart';
+import 'package:new_project/my_page/setting_profile/dart/setting_child_page.dart';
 import 'package:new_project/login_page/login_page.dart';
 import 'package:new_project/main.dart';
 import 'package:new_project/my_page/my_page.dart';
 import 'package:new_project/my_page/my_page_follower/message_page/message_page.dart';
 import 'package:new_project/my_page/my_page_follower/my_page_follower.dart';
 import 'package:new_project/my_page/my_page_follower/shots_list/shots_list_page.dart';
+import 'package:new_project/my_page/setting_profile/dart/setting_demo_page.dart';
 import 'package:new_project/my_page/setting_profile/dart/setting_profile_page.dart';
 import 'package:new_project/router/page_builder.dart';
 import 'package:new_project/splash_page/splash_page.dart';
@@ -60,6 +61,8 @@ class PageRoutes {
   static String settingChildPage = '/settingChildPage';
   // HeroNextPage
   static String heroNextPage = '/heroNextPage';
+  // SettingDemoPage
+  static String settingDemoPage = '/settingDemoPage';
 
   static Map<String, PageBuilder> get pageRoutesMap => {
     // 根
@@ -100,5 +103,7 @@ class PageRoutes {
     settingChildPage: PageBuilder(builder: (bundle) => const SettingChildPage()),
     // HeroNextPage
     heroNextPage: PageBuilder(builder: (bundle) => const HeroNextPage()),
+    // settingDemoPage
+    settingDemoPage: PageBuilder(builder: (bundle) => const SettingDemoPage())
   };
 }

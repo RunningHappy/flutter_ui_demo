@@ -101,7 +101,11 @@ class _SettingDrawerPageState extends State<SettingDrawerPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: settingList.map<Widget>((e) => SettingLineItem(title: e,callBack: (){
                       z.close!();
-                      NavigatorUtil.openWin(context, PageRoutes.settingChildPage);
+                      if(settingList.indexOf(e) == 1){
+                        NavigatorUtil.openWin(context, PageRoutes.settingDemoPage);
+                      }else{
+                        NavigatorUtil.openWin(context, PageRoutes.settingChildPage);
+                      }
                     },)).toList(),
                   ),
                 ),

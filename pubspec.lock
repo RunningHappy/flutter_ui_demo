@@ -6,7 +6,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "715832a2ac99c47a035847724410ec69ec80c52c"
+      resolved-ref: f2148e4224d192eae0aaef4ed3bf3715e046b34d
       url: "git@gitlab.56hswl.com:lmp/app_assembly.git"
     source: git
     version: "0.0.1"
