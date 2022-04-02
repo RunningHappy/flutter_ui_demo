@@ -37,7 +37,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
             width: double.infinity,
             child: Column(
               children: [
-                CommonWaterButton(Colors.blueAccent, innerIcon: Icon(Icons.call,color: Colors.white,)),
+                const CommonWaterButton(Colors.blueAccent, innerIcon: Icon(Icons.call,color: Colors.white,), outSize: 65,),
                 SizedBox(height: 20.h,),
                 HollowText1(child: Text('Hello',style: TextStyle(
                   fontSize: 20.sp,
@@ -50,9 +50,9 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                   width: 100,
                   height: 100,
                   value: 1,
-                  gradient: SweepGradient(colors: [Colors.blueAccent, Colors.yellowAccent, Colors.blueAccent], stops: [0.2, 0.3, 1]),
+                  gradient: const SweepGradient(colors: [Colors.blueAccent, Colors.yellowAccent, Colors.blueAccent], stops: [0.2, 0.3, 1]),
                   strokeWidth: 10,
-                  totalDuration: Duration(
+                  totalDuration: const Duration(
                     seconds: 10,
                   ),
                   child: (context, c) => Center(
@@ -67,7 +67,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
               ],
             ),
           ),
-          CommonDraggleButton(child: CommonWaterButton(Colors.blueAccent, innerIcon: Icon(Icons.call,color: Colors.white,)), initialOffset: Offset(10.w,50.h), onPressed: (){}, globalKey: _key)
+          CommonDraggleButton(child: const CommonWaterButton(Colors.blueAccent, innerIcon: Icon(Icons.call,color: Colors.white,)), initialOffset: Offset(10.w,50.h), onPressed: (){}, globalKey: _key)
         ],
       ),
     );

@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_project/common_widget/common_img_btn.dart';
-import 'package:new_project/common_widget/common_trans_appbar.dart';
-import 'package:new_project/utils/navigator_util.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class HeroNextPage extends StatefulWidget {

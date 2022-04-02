@@ -90,7 +90,7 @@ class _SettingChildPageState extends State<SettingChildPage> {
               controller: search,
               placeholder: 'search',
               style: TextStyle(
-                  fontSize: 18.sp
+                fontSize: 18.sp
               ),
               placeholderStyle: TextStyle(
                 fontSize: 18.sp,

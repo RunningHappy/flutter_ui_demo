@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_project/common_widget/common_linear_btn.dart';
@@ -30,7 +29,7 @@ class _SettingProfilePageState extends State<SettingProfilePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SettingHeaderView(),
+          const SettingHeaderView(),
           SizedBox(height: 55.h,),
           Expanded(
             child: Container(
