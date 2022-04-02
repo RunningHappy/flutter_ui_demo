@@ -33,7 +33,7 @@ class HomeItemTop extends StatelessWidget {
                 userName!,
                 style: TextStyle(
                   fontSize: 16.sp,
-                  color: Color(0xFF242424),
+                  color: const Color(0xFF242424),
                   fontWeight: FontWeight.w600
                 ),
               )
@@ -43,7 +43,7 @@ class HomeItemTop extends StatelessWidget {
             timeStr!,
             style: TextStyle(
               fontSize: 14.sp,
-              color: Color(0xFFBDBDBD)
+              color: const Color(0xFFBDBDBD)
             ),
           )
         ],

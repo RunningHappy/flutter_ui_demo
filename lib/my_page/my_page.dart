@@ -102,8 +102,8 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin{
             controller: listController,
             padding: EdgeInsets.only(bottom: 65.h),
             children: [
-              MyPageTopView(),
-              MyPageCenterView(),
+              const MyPageTopView(),
+              const MyPageCenterView(),
               CommonSegment(
                 titleList: titleList,
                 normalColor: Color(0xFFBDBDBD),

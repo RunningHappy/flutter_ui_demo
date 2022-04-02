@@ -41,7 +41,7 @@ class _ActivitySettingDialogContentState extends State<ActivitySettingDialogCont
       top: false,
       bottom: false,
       child: Scaffold(
-        backgroundColor: Color(0x80333333),
+        backgroundColor: const Color(0x80333333),
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
@@ -60,7 +60,7 @@ class _ActivitySettingDialogContentState extends State<ActivitySettingDialogCont
                             topLeft: Radius.circular(10.h),
                             topRight: Radius.circular(10.h)
                           ),
-                          color: Color(0xFFBDBDBD)
+                          color: const Color(0xFFBDBDBD)
                         ),
                         height: 10.h,
                         margin: EdgeInsets.symmetric(horizontal: 16.w),
@@ -82,14 +82,14 @@ class _ActivitySettingDialogContentState extends State<ActivitySettingDialogCont
                                 'Activity Feed',
                                 style: TextStyle(
                                   fontSize: 20.sp,
-                                  color: Color(0xFF212121),
+                                  color: const Color(0xFF212121),
                                   fontWeight: FontWeight.w700
                                 ),
                               ),
                               SizedBox(height: 24.h,),
                               Expanded(
                                 child: ListView.builder(
-                                  padding: EdgeInsets.all(0),
+                                  padding: const EdgeInsets.all(0),
                                   itemCount: widget.dataList.length,
                                   itemBuilder: (context,index){
                                     return Container(

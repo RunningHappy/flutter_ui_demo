@@ -18,7 +18,7 @@ class SettingHeaderView extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 14.w,vertical: 14.h),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.h),
-          color: Color(0x10FFFFFF)
+          color: const Color(0x10FFFFFF)
         ),
         child: Row(
           children: [
@@ -49,7 +49,7 @@ class SettingHeaderView extends StatelessWidget {
                           'thanhphamdhbk@gmail.com',
                           style: TextStyle(
                             fontSize: 12.sp,
-                            color: Color(0xFFC0C0C0)
+                            color: const Color(0xFFC0C0C0)
                           ),
                         )
                       ],

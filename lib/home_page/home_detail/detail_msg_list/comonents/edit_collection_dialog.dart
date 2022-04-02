@@ -21,7 +21,7 @@ class EditCollectionDialog extends Dialog {
       barrierDismissible: false,
       useSafeArea: false,
       builder: (BuildContext context) {
-        return EditCollectionDialogContent();
+        return const EditCollectionDialogContent();
       }
     );
   }
@@ -64,7 +64,7 @@ class _EditCollectionDialogContentState extends State<EditCollectionDialogConten
                               topLeft: Radius.circular(10.h),
                               topRight: Radius.circular(10.h)
                             ),
-                            color: Color(0xFFBDBDBD)
+                            color: const Color(0xFFBDBDBD)
                           ),
                           height: 10.h,
                           margin: EdgeInsets.symmetric(horizontal: 16.w),

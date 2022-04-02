@@ -52,13 +52,13 @@ class _DiscoverDetailPageState extends State<DiscoverDetailPage> {
         NavigatorUtil.closeWin(context);
       }),
       body: ListView(
-        padding: EdgeInsets.all(0),
+        padding: const EdgeInsets.all(0),
         controller: listController,
         children: [
-          DetailTopView(),
-          DetailFormView(),
+          const DetailTopView(),
+          const DetailFormView(),
           SizedBox(height: 44.h,),
-          DetailCenterTitle(title: 'Challenge'),
+          const DetailCenterTitle(title: 'Challenge'),
           SizedBox(height: 16.h,),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 25.w),
@@ -67,7 +67,7 @@ class _DiscoverDetailPageState extends State<DiscoverDetailPage> {
               textAlign: TextAlign.justify,
               style: TextStyle(
                 fontSize: 14.sp,
-                color: Color(0xFF586274)
+                color: const Color(0xFF586274)
               ),
             ),
           ),
@@ -79,16 +79,16 @@ class _DiscoverDetailPageState extends State<DiscoverDetailPage> {
               textAlign: TextAlign.justify,
               style: TextStyle(
                   fontSize: 14.sp,
-                  color: Color(0xFF586274)
+                  color: const Color(0xFF586274)
               ),
             ),
           ),
           SizedBox(height: 40.h,),
-          DetailCenterTitle(title: 'Inspiration'),
-          DetailImagesView(leftImage: 'images/discover/detail_man_2.png', rightImage: 'images/discover/detail_man_1.png'),
+          const DetailCenterTitle(title: 'Inspiration'),
+          const DetailImagesView(leftImage: 'images/discover/detail_man_2.png', rightImage: 'images/discover/detail_man_1.png'),
           SizedBox(height: 40.h,),
-          DetailCenterTitle(title: 'Trending'),
-          DetailImagesView(leftImage: 'images/discover/detail_woman.png', rightImage: 'images/discover/detail_woman.png'),
+          const DetailCenterTitle(title: 'Trending'),
+          const DetailImagesView(leftImage: 'images/discover/detail_woman.png', rightImage: 'images/discover/detail_woman.png'),
           SizedBox(height: 60.h,),
         ],
       ),

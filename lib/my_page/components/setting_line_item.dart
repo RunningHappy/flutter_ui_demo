@@ -22,7 +22,7 @@ class SettingLineItem extends StatelessWidget {
             topRight: Radius.circular(40.h),
             bottomRight: Radius.circular(40.h)
           ),
-          color: Color(0x20FFFFFF)
+          color: const Color(0x20FFFFFF)
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -31,7 +31,7 @@ class SettingLineItem extends StatelessWidget {
               title,
               style: TextStyle(
                 fontSize: 16.sp,
-                color: Color(0xFFFFFFFF)
+                color: const Color(0xFFFFFFFF)
               ),
             ),
             Image.asset(

@@ -24,7 +24,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
   /// 当前页面的索引
   int _currentIndex = 0;
   DateTime? _lastPopTime;
-  final List<Widget> _pageList = [HomePage(),DiscoverPage(),ActivityPage(),MyPage()];
+  final List<Widget> _pageList = [const HomePage(),const DiscoverPage(),const ActivityPage(),const MyPage()];
   final List<String> normalImage = ['images/bottombar/tab_bar_1_normal.png','images/bottombar/tab_bar_2_normal.png','images/bottombar/tab_bar_3_normal.png','images/bottombar/tab_bar_4_normal.png'];
   final List<String> activeImage = ['images/bottombar/tab_bar_1_select.png','images/bottombar/tab_bar_2_select.png','images/bottombar/tab_bar_3_select.png','images/bottombar/tab_bar_4_select.png'];
   // final List<String> titles = ['首页','发现','消息','我的'];

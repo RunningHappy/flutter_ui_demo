@@ -53,7 +53,7 @@ class _DiscoverSearchPageState extends State<DiscoverSearchPage> {
         }),
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 20.h),
-          children: [
+          children: const [
             SearchViewItem(imgPath: 'images/discover/search_view_1_img.png', title: 'PHOTOGRAPHY',textAlign: Alignment.centerLeft,),
             SearchViewItem(imgPath: 'images/discover/search_view_2_img.png', title: 'IILUSTRATION',textAlign: Alignment.centerRight,),
             SearchViewItem(imgPath: 'images/discover/search_view_3_img.png', title: 'DESIGN',textAlign: Alignment.centerLeft,),

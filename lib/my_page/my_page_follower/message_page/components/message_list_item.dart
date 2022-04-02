@@ -18,7 +18,7 @@ class MessageListItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.h),
-        color: itemModel.activity ? Color(0xFFF1F1FE) : Color(0xFFF6F7F9)
+        color: itemModel.activity ? const Color(0xFFF1F1FE) : const Color(0xFFF6F7F9)
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

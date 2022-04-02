@@ -13,7 +13,7 @@ class TitleContent extends Container{
       data,
       style: TextStyle(
         fontSize: fontSize??16.sp,
-        color: fontColor??Color(0xFF888BF4),
+        color: fontColor??const Color(0xFF888BF4),
         fontWeight: FontWeight.w600
       ),
     );

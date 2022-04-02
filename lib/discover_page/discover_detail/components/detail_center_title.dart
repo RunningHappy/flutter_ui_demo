@@ -16,7 +16,7 @@ class DetailCenterTitle extends StatelessWidget {
             height: 6.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3.h),
-              color: Color(0xFF888BF4)
+              color: const Color(0xFF888BF4)
             ),
           ),
           SizedBox(width: 24.w,),
@@ -34,7 +34,7 @@ class DetailCenterTitle extends StatelessWidget {
             height: 6.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(3.h),
-              color: Color(0xFF888BF4)
+              color: const Color(0xFF888BF4)
             ),
           )
         ],

@@ -17,7 +17,7 @@ class DetailFormMsgLine extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 14.w,vertical: 15.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.h),
-        color: backColor??Color(0xFFF1F1FE)
+        color: backColor??const Color(0xFFF1F1FE)
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,7 +34,7 @@ class DetailFormMsgLine extends StatelessWidget {
             msg,
             style: TextStyle(
               fontSize: titleFont??14.sp,
-              color: titleColor??Color(0xFF8F90A7),
+              color: titleColor??const Color(0xFF8F90A7),
             ),
           )
         ],

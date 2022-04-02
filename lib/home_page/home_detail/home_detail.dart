@@ -72,7 +72,7 @@ class _HomeDetailState extends State<HomeDetail> {
                   data.imgPath,
                   width: double.infinity,
                 ),
-                HomeDetailActionsView(),
+                const HomeDetailActionsView(),
                 SizedBox(height: 10.h,),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -96,7 +96,7 @@ class _HomeDetailState extends State<HomeDetail> {
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 fontSize: 14.sp,
-                                color: Color(0xFF828282)
+                                color: const Color(0xFF828282)
                               ),
                             )
                           )
@@ -109,9 +109,9 @@ class _HomeDetailState extends State<HomeDetail> {
                 ListView.builder(
                   itemCount: 4,
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context,index){
-                    return HomeDetailListItem();
+                    return const HomeDetailListItem();
                   }
                 )
               ],
@@ -134,7 +134,7 @@ class _HomeDetailState extends State<HomeDetail> {
                         'Add a comment',
                         style: TextStyle(
                           fontSize: 14.sp,
-                          color: Color(0xFFBDBDBD)
+                          color: const Color(0xFFBDBDBD)
                         ),
                       )
                     )

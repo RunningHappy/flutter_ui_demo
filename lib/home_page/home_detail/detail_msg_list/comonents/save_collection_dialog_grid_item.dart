@@ -21,7 +21,7 @@ class SaveCollectionDialogGridItem extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 4.w,vertical: 4.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.h),
-                  color: Color(0x60888BF4)
+                  color: const Color(0x60888BF4)
                 ),
                 alignment: Alignment.topRight,
                 child: Image.asset(

@@ -25,7 +25,7 @@ class DetailTopView extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Color(0x0726292B),
+                color: const Color(0x0726292B),
                 offset: Offset(0, 4.h),
                 blurRadius: 40.w,
                 spreadRadius: 0

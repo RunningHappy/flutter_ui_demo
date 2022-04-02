@@ -96,8 +96,8 @@ class _MyPageFollowerState extends State<MyPageFollower> {
               controller: listController,
               padding: EdgeInsets.all(0),
               children: [
-                MyPageTopView(),
-                MyPageCenterView(),
+                const MyPageTopView(),
+                const MyPageCenterView(),
                 CommonSegment(
                   titleList: titleList,
                   normalColor: Color(0xFFBDBDBD),
@@ -140,13 +140,13 @@ class _MyPageFollowerState extends State<MyPageFollower> {
                     padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 16.h),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       //横轴元素个数
-                        crossAxisCount: 2,
-                        //纵轴间距
-                        mainAxisSpacing: 16.h,
-                        //横轴间距
-                        crossAxisSpacing: 19.h,
-                        //子组件宽高长度比例
-                        childAspectRatio: 158.w / 185.h
+                      crossAxisCount: 2,
+                      //纵轴间距
+                      mainAxisSpacing: 16.h,
+                      //横轴间距
+                      crossAxisSpacing: 19.h,
+                      //子组件宽高长度比例
+                      childAspectRatio: 158.w / 185.h
                     ),
                     itemBuilder: (context,index){
                       return MyPageGridItem(itemModel: dataList[index],callBack: (){

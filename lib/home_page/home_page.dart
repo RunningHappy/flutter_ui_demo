@@ -42,10 +42,10 @@ class _HomePageState extends State<HomePage> {
           children: [
             CommonSegment(
               titleList: titleList,
-              normalColor: Color(0xFFBDBDBD),
-              selectColor: Color(0xFF888BF4),
+              normalColor: const Color(0xFFBDBDBD),
+              selectColor: const Color(0xFF888BF4),
               normalBackColor: Colors.transparent,
-              selectBackColor: Color(0xFFF1F1FE),
+              selectBackColor: const Color(0xFFF1F1FE),
               callBack: (index){
                 for(var item in titleList){
                   item.select = false;

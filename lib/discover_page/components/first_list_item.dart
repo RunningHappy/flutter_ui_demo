@@ -26,14 +26,14 @@ class FirstListItem extends StatelessWidget {
             width: 150.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.w),
-              color: Color(0x50171717)
+              color: const Color(0x50171717)
             ),
             alignment: Alignment.center,
             child: Text(
               title,
               style: TextStyle(
                 fontSize: 14.sp,
-                color: Color(0xFFFFFFFF),
+                color: const Color(0xFFFFFFFF),
                 fontWeight: FontWeight.w700
               ),
             ),

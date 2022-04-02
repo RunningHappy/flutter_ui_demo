@@ -15,16 +15,16 @@ class DetailFormView extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Color(0xFFF2F2F2),
+            color: const Color(0xFFF2F2F2),
             width: 1.h
           )
         )
       ),
       child: Column(
         children: [
-          DetailFormMsgLine(title: 'Deadline', msg: '30 days left'),
+          const DetailFormMsgLine(title: 'Deadline', msg: '30 days left'),
           SizedBox(height: 20.h,),
-          DetailFormMsgLine(title: 'Prize', msg: "\$ 100.00"),
+          const DetailFormMsgLine(title: 'Prize', msg: "\$ 100.00"),
           SizedBox(height: 24.h,),
           Row(
             mainAxisSize: MainAxisSize.min,

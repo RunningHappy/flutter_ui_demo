@@ -41,7 +41,7 @@ class _DetailMsgListPageState extends State<DetailMsgListPage> {
               child: ListView.builder(
                 itemCount: 14,
                 itemBuilder: (context,index){
-                  return HomeDetailListItem(showBtn: false,);
+                  return const HomeDetailListItem(showBtn: false,);
                 }
               )
             ),

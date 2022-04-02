@@ -108,7 +108,7 @@ class MyPageCenterView extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 24.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(3.h),
-                  color: Color(0xFF888BF4)
+                  color: const Color(0xFF888BF4)
                 ),
               ),
               Image.asset(
@@ -122,7 +122,7 @@ class MyPageCenterView extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 24.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(3.h),
-                  color: Color(0xFF888BF4)
+                  color: const Color(0xFF888BF4)
                 ),
               ),
               Image.asset(

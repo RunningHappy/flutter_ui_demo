@@ -66,7 +66,7 @@ class OtherListItem extends StatelessWidget {
                 width: 158.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.w),
-                  color: Color(0x50171717)
+                  color: const Color(0x50171717)
                 ),
                 alignment: Alignment.center,
                 child: Text(
@@ -74,7 +74,7 @@ class OtherListItem extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: Color(0xFFFFFFFF),
+                    color: const Color(0xFFFFFFFF),
                     fontWeight: FontWeight.w700
                   ),
                 ),
@@ -90,7 +90,7 @@ class OtherListItem extends StatelessWidget {
                   msg,
                   style: TextStyle(
                     fontSize: 14.sp,
-                    color: Color(0xFF828282)
+                    color: const Color(0xFF828282)
                   ),
                 )
               ],

@@ -42,7 +42,7 @@ class _SaveCollectionDialogContentState extends State<SaveCollectionDialogConten
         top: false,
         bottom: false,
         child: Scaffold(
-          backgroundColor: Color(0x80333333),
+          backgroundColor: const Color(0x80333333),
           body: Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -62,7 +62,7 @@ class _SaveCollectionDialogContentState extends State<SaveCollectionDialogConten
                                 topLeft: Radius.circular(10.h),
                                 topRight: Radius.circular(10.h)
                             ),
-                            color: Color(0xFFBDBDBD)
+                            color: const Color(0xFFBDBDBD)
                           ),
                           height: 10.h,
                           margin: EdgeInsets.symmetric(horizontal: 16.w),
