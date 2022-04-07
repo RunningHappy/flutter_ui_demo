@@ -11,12 +11,18 @@ CommonSearchBar(
   bool? enable = true,
   FocusNode? focusNode,
   bool? showCancle = false,
+  bool? showBack = true,
+  double? backWidth,
+  Widget? backWidget,
+  String? cancleTitle,
   Function()? clickCancle}){
 
   return AppBar(
     backgroundColor: Colors.white,
     elevation: 0,
-    leadingWidth: 0,
+    leadingWidth: showBack! ? 0 : backWidth??0,
+    leading: showBack ? Container() : backWidget,
+    titleSpacing: showBack ? 10.w : 0,
     title: showRightBtn! ? Row(
       children: [
         Expanded(
@@ -67,7 +73,7 @@ CommonSearchBar(
             ),
           )
         ),
-        SizedBox(width: 16.w,),
+        SizedBox(width: 10.w,),
         Image.asset('images/searchappbar/msg_icon.png',width: 36.h,height: 36.h,)
       ],
     ) : Row(
@@ -125,6 +131,7 @@ CommonSearchBar(
             ),
           )
         ),
+        SizedBox(width: showBack ? showCancle ? 10.w : 0 : 10.w,),
         Offstage(
           offstage: showCancle ? false : true,
           child: GestureDetector(
@@ -134,11 +141,11 @@ CommonSearchBar(
               }
             },
             child: Container(
+              margin: EdgeInsets.only(right: showBack ? 0 : 10.w),
               child: Row(
                 children: [
-                  SizedBox(width: 16.w,),
                   Text(
-                    'Cancle',
+                    cancleTitle??'Cancle',
                     style: TextStyle(
                       fontSize: 14.sp,
                       color: Colors.black

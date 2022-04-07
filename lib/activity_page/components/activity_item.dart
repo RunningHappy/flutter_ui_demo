@@ -75,7 +75,7 @@ class _ActivityItemState extends State<ActivityItem> {
                                     text: widget.itemModel.msg,
                                     style: TextStyle(
                                       fontSize: 14.sp,
-                                      color: Color(0xFF888BF4)
+                                      color: const Color(0xFF888BF4)
                                     ),
                                   ),
                                 ]
@@ -89,7 +89,7 @@ class _ActivityItemState extends State<ActivityItem> {
                         widget.itemModel.timeStr,
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: Color(0xFFBDBDBD)
+                          color: const Color(0xFFBDBDBD)
                         ),
                       )
                     ],

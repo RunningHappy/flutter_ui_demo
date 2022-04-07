@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_project/common_widget/common_search_bar.dart';
 import 'package:new_project/common_widget/form_hide_keyboard.dart';
 import 'package:new_project/discover_page/search_page/components/searc_view_item.dart';
+import 'package:new_project/utils/navigator_util.dart';
 
 class DiscoverSearchPage extends StatefulWidget {
   const DiscoverSearchPage({Key? key}) : super(key: key);
@@ -50,7 +51,19 @@ class _DiscoverSearchPageState extends State<DiscoverSearchPage> {
         backgroundColor: Colors.white,
         appBar: CommonSearchBar(search,'Type something',showRightBtn: false,focusNode: _focusNode,showCancle: showCancle,clickCancle: (){
           _focusNode.unfocus();
-        }),
+        },showBack: false, backWidth: 45.w, backWidget: GestureDetector(
+          onTap: (){
+            NavigatorUtil.closeWin(context);
+          },
+          child: Container(
+            // color: Colors.redAccent,
+            margin: EdgeInsets.only(left: 10.w,right: 10.w),
+            child: Image.asset(
+              'images/discover/detail_back_icon.png',
+              color: Colors.black,
+            ),
+          )
+        ),cancleTitle: '取消'),
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 20.h),
           children: const [
