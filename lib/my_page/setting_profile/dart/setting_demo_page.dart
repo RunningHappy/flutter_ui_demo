@@ -46,24 +46,30 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                 SizedBox(height: 20.h,),
                 HollowText2(text: 'Word', size: 20.sp, hollowColor: Colors.white, strokeColor: Colors.redAccent, strokeWidth: 2.w),
                 SizedBox(height: 20.h,),
-                CircleProgressIndicatorWidget(
-                  width: 100,
-                  height: 100,
-                  value: 1,
-                  gradient: const SweepGradient(colors: [Colors.blueAccent, Colors.yellowAccent, Colors.blueAccent], stops: [0.2, 0.3, 1]),
-                  strokeWidth: 10,
-                  totalDuration: const Duration(
-                    seconds: 10,
-                  ),
-                  child: (context, c) => Center(
-                    child: Text(
-                      "${((1 - c.value) * 100).toInt()}%",
-                      style: TextStyle(
-
-                      ),
-                    ),
-                  ),
-                ),
+                // CircleProgressIndicatorWidget(
+                //   width: 100,
+                //   height: 100,
+                //   value: 1,
+                //   gradient: const SweepGradient(colors: [Colors.blueAccent, Colors.yellowAccent, Colors.blueAccent], stops: [0.2, 0.3, 1]),
+                //   strokeWidth: 10,
+                //   totalDuration: const Duration(
+                //     seconds: 10,
+                //   ),
+                //   child: (context, c) => Center(
+                //     child: Text(
+                //       "${((1 - c.value) * 100).toInt()}%",
+                //       style: TextStyle(
+                //
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // SizedBox(height: 20.h,),
+                SizedBox(
+                  width: double.infinity,
+                  height: 200.w,
+                  child: CommonPieWidget([{'test':26.0},{'test1':24.0},{'test2':32.0},{'test3':28.0}], [Colors.blueAccent,Colors.redAccent,Colors.yellowAccent,Colors.orangeAccent]),
+                )
               ],
             ),
           ),
