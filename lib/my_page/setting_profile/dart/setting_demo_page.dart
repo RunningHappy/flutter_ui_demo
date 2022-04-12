@@ -15,6 +15,7 @@ class SettingDemoPage extends StatefulWidget {
 class _SettingDemoPageState extends State<SettingDemoPage> {
 
   GlobalKey _key = GlobalKey();
+  GlobalKey _key1 = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -35,34 +36,49 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
         children: [
           Container(
             width: double.infinity,
-            child: Column(
+            child: ListView(
               children: [
                 const CommonWaterButton(Colors.blueAccent, innerIcon: Icon(Icons.call,color: Colors.white,), outSize: 65,),
                 SizedBox(height: 20.h,),
-                HollowText1(child: Text('Hello',style: TextStyle(
-                  fontSize: 20.sp,
-                  color: Colors.white
-                ),), strokeWidth: 2.w, strokeColor: Colors.blueAccent),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    HollowText1(child: Text('Hello',style: TextStyle(
+                        fontSize: 20.sp,
+                        color: Colors.white
+                    ),), strokeWidth: 2.w, strokeColor: Colors.blueAccent)
+                  ],
+                ),
                 SizedBox(height: 20.h,),
-                HollowText2(text: 'Word', size: 20.sp, hollowColor: Colors.white, strokeColor: Colors.redAccent, strokeWidth: 2.w),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    HollowText2(text: 'Word', size: 20.sp, hollowColor: Colors.white, strokeColor: Colors.redAccent, strokeWidth: 2.w)
+                  ],
+                ),
                 SizedBox(height: 20.h,),
-                CircleProgressIndicatorWidget(
-                  width: 100,
-                  height: 100,
-                  value: 1,
-                  gradient: const SweepGradient(colors: [Colors.blueAccent, Colors.yellowAccent, Colors.blueAccent], stops: [0.2, 0.3, 1]),
-                  strokeWidth: 10,
-                  totalDuration: const Duration(
-                    seconds: 10,
-                  ),
-                  child: (context, c) => Center(
-                    child: Text(
-                      "${((1 - c.value) * 100).toInt()}%",
-                      style: TextStyle(
-
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleProgressIndicatorWidget(
+                      width: 100,
+                      height: 100,
+                      value: 1,
+                      gradient: const SweepGradient(colors: [Colors.blueAccent, Colors.yellowAccent, Colors.blueAccent], stops: [0.2, 0.3, 1]),
+                      strokeWidth: 10,
+                      totalDuration: const Duration(
+                        seconds: 10,
                       ),
-                    ),
-                  ),
+                      child: (context, c) => Center(
+                        child: Text(
+                          "${((1 - c.value) * 100).toInt()}%",
+                          style: TextStyle(
+
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
                 SizedBox(height: 20.h,),
                 _brokenLineExample(context),
@@ -89,7 +105,25 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                       );
                     },
                   ));
-                })
+                }),
+                SizedBox(height: 20.h,),
+                CommonButton(
+                  key: _key1,
+                  buttonName: 'test1',
+                  h: 45.h,
+                  isDisable: true,
+                  onPressed: (){
+                    PopupWindow.showPopWindow(context, 'test1', _key1, hasCloseIcon: true, arrowOffset: 30.w);
+                  },
+                ),
+                SizedBox(height: 20.h,),
+                BubbleText(
+                  maxLines: 2,
+                  text: '推荐理由：“满五唯一”“临近地铁”“首付低”，多出折行显示，文字展开的样式文式文文字展开的样式文式文。问我哈哈哈哈',
+                  onExpanded: (isExpanded) {
+                    String str = isExpanded ? "展开了" : "收起了";
+                  },
+                ),
               ],
             ),
           ),

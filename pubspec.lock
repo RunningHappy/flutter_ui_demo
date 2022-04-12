@@ -4,11 +4,9 @@ packages:
   app_assembly:
     dependency: "direct main"
     description:
-      path: "."
-      ref: master
-      resolved-ref: b63288f23f8bad7ff1dd2527ae6a59a682cf8221
-      url: "git@gitlab.56hswl.com:lmp/app_assembly.git"
-    source: git
+      path: "../app_assembly"
+      relative: true
+    source: path
     version: "0.0.1"
   async:
     dependency: transitive
