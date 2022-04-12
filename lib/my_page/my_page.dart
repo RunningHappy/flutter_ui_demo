@@ -80,7 +80,7 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin{
         child: Scaffold(
           extendBodyBehindAppBar: true,
           backgroundColor: Colors.white,
-          appBar: CommonTansAppBar(opactity, (){
+          appBar: commonTansAppBar(opactity, (){
 
           },title: '@brunopham',fontSize: 14.sp,showBack: false,actions: [
             GestureDetector(

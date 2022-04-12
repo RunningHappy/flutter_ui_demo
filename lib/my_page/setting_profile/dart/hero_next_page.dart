@@ -27,7 +27,7 @@ class _HeroNextPageState extends State<HeroNextPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SlidingUpPanelView(
+    return SlidingUpPanelViewFrame(
       title: '@brunopham',
       rightActions: [
         CommonImgBtn(imgStr: 'images/home/home_item_add.png',width: 24.h,callBack: (){

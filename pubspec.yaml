@@ -56,6 +56,7 @@ dependencies:
     git:
       url: git@gitlab.56hswl.com:lmp/app_assembly.git
       ref: master
+#    path: ../app_assembly
 
 dev_dependencies:
   flutter_test:

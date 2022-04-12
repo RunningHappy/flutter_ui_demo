@@ -46,6 +46,7 @@ class _BottomTabBarState extends State<BottomTabBar> {
       activeTitleSize: 10.sp,
       imageTitlePadding: 3.h,
       imageWidth: 24.h,
+      barHeight: 56.h,
     );
   }
 }
