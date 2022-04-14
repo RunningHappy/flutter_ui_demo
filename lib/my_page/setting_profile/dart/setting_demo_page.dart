@@ -83,7 +83,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                 SizedBox(height: 20.h,),
                 _brokenLineExample(context),
                 SizedBox(height: 20.h,),
-                CommonButton(buttonName: 'test', h: 45.h, isDisable: true, onPressed: (){
+                CommonButton(buttonName: 'test', h: 45, isDisable: true, onPressed: (){
                   Navigator.push(context, MaterialPageRoute(
                     builder: (BuildContext context) {
                       List<SelectCityModel> hotCityList = [];
@@ -110,20 +110,25 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                 CommonButton(
                   key: _key1,
                   buttonName: 'test1',
-                  h: 45.h,
-                  isDisable: true,
+                  h: 45,
+                  fontSize: 24.sp,
+                  isDisable: false,
                   onPressed: (){
                     PopupWindow.showPopWindow(context, 'test1', _key1, hasCloseIcon: true, arrowOffset: 30.w);
                   },
                 ),
                 SizedBox(height: 20.h,),
-                BubbleText(
-                  maxLines: 2,
-                  text: '推荐理由：“满五唯一”“临近地铁”“首付低”，多出折行显示，文字展开的样式文式文文字展开的样式文式文。问我哈哈哈哈',
-                  onExpanded: (isExpanded) {
-                    String str = isExpanded ? "展开了" : "收起了";
-                  },
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: BubbleText(
+                    maxLines: 2,
+                    text: '推荐理由：“满五唯一”“临近地铁”“首付低”，多出折行显示，文字展开的样式文式文文字展开的样式文式文。问我哈哈哈哈',
+                    onExpanded: (isExpanded) {
+
+                    },
+                  ),
                 ),
+                SizedBox(height: 20.h,),
               ],
             ),
           ),
@@ -138,8 +143,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
       showPointDashLine: false,
       yHintLineOffset: 40,
       lines: _getPointsLinesForExample(),
-      size: Size(MediaQuery.of(context).size.width - 50 * 2,
-          MediaQuery.of(context).size.height / 5 * 1.6 - 20 * 2),
+      size: Size(MediaQuery.of(context).size.width - 70.w,190.h),
       isShowXHintLine: true,
       yDialValues: getYDialValuesForExample(),
       xDialValues: _getXDialValuesForExample(_getPointsLinesForExample()),
