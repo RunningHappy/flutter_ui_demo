@@ -43,6 +43,7 @@ class _HeroNextPageState extends State<HeroNextPage> {
       backIconPath: 'images/discover/detail_back_icon.png',
       topTapView: _floatingPanel(),
       contentView: _floatingCollapsed(),
+      controller: _pc,
       body: ListView(
         padding: EdgeInsets.only(bottom: 35.h),
         children: [

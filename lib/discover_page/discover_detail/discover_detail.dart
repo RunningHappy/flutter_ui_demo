@@ -78,8 +78,8 @@ class _DiscoverDetailPageState extends State<DiscoverDetailPage> {
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus. Eget dictumst vitae enim, felis morbi. Quis risus, neque cursus risus.',
               textAlign: TextAlign.justify,
               style: TextStyle(
-                  fontSize: 14.sp,
-                  color: const Color(0xFF586274)
+                fontSize: 14.sp,
+                color: const Color(0xFF586274)
               ),
             ),
           ),

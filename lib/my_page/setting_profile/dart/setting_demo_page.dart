@@ -112,7 +112,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                   buttonName: 'test1',
                   h: 45,
                   fontSize: 24.sp,
-                  isDisable: false,
+                  isDisable: true,
                   onPressed: (){
                     PopupWindow.showPopWindow(context, 'test1', _key1, hasCloseIcon: true, arrowOffset: 30.w);
                   },
