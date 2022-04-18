@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:app_assembly/app_assembly.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,8 +45,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
       dataList1[i.toString()] = data1;
       dataList2[i.toString()] = data2;
     }
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 300), vsync: this);
+    controller = AnimationController( duration: const Duration(milliseconds: 1000), vsync: this);
     animation = CurvedAnimation(parent: controller, curve: Curves.ease);
     animation = Tween(begin: 0.0, end: 1.0).animate(animation);
     controller.forward();
@@ -130,6 +128,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
                       crossedAxisLine: true,
                       rotateAngle: angle! * 2 * pi / 360,
                       animateProgress: animation.value,
+                      axisLineColor: Colors.redAccent,
                       builder: (index) {
                         return Text(
                           '顶点${index.toString()}',
