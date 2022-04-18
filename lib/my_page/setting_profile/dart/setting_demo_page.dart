@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:app_assembly/app_assembly.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,10 +14,44 @@ class SettingDemoPage extends StatefulWidget {
   _SettingDemoPageState createState() => _SettingDemoPageState();
 }
 
-class _SettingDemoPageState extends State<SettingDemoPage> {
+class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProviderStateMixin {
 
   GlobalKey _key = GlobalKey();
   GlobalKey _key1 = GlobalKey();
+  late AnimationController controller;
+  late Animation<double> animation;
+  late double radius;
+  int? sideCount;
+  double? angle;
+  late double padding;
+  Map<String, List<double>> dataList1 = Map();
+  Map<String, List<double>> dataList2 = Map();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    radius = 80;
+    sideCount = 5;
+    padding = 4;
+    angle = 0;
+    for (int i = 3; i <= 6; i++) {
+      List<double> data1 = [];
+      List<double> data2 = [];
+
+      for (int j = 0; j < i; j++) {
+        data1.add(Random().nextDouble() * 10);
+        data2.add(Random().nextDouble() * 10);
+      }
+      dataList1[i.toString()] = data1;
+      dataList2[i.toString()] = data2;
+    }
+    controller = AnimationController(
+        duration: const Duration(milliseconds: 300), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.ease);
+    animation = Tween(begin: 0.0, end: 1.0).animate(animation);
+    controller.forward();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +119,27 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                 SizedBox(height: 20.h,),
                 _brokenLineExample(context),
                 SizedBox(height: 20.h,),
+                AnimatedBuilder(
+                  animation: animation,
+                  builder: (_, __) {
+                    return RadarChart(
+                      radius: radius,
+                      provider: RadarProvider(sideCount, dataList1, dataList2),
+                      sidesCount: sideCount!,
+                      markerMargin: padding,
+                      crossedAxisLine: true,
+                      rotateAngle: angle! * 2 * pi / 360,
+                      animateProgress: animation.value,
+                      builder: (index) {
+                        return Text(
+                          '顶点${index.toString()}',
+                          style: const TextStyle(color: Colors.black, fontSize: 14),
+                        );
+                      },
+                    );
+                  }
+                ),
+                SizedBox(height: 20.h,),
                 CommonButton(buttonName: 'test', h: 45, isDisable: true, onPressed: (){
                   Navigator.push(context, MaterialPageRoute(
                     builder: (BuildContext context) {
@@ -100,7 +157,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
                         hotCityTitle: '这里是推荐城市',
                         hotCityList: hotCityList,
                         onValueChanged: (SelectCityModel model){
-
+                          EasyLoading.showToast('${model.name}');
                         },
                       );
                     },
@@ -488,4 +545,58 @@ class _SettingDemoPageState extends State<SettingDemoPage> {
     return _xDialValue;
   }
 
+}
+
+class RadarProvider extends RadarChartDataProvider {
+  final Map<String, List<double>> dataList1;
+
+  final Map<String, List<double>> dataList2;
+
+  final int? sideCount;
+
+  RadarProvider(this.sideCount, this.dataList1, this.dataList2);
+
+  @override
+  int getRadarCount() {
+    return 2;
+  }
+
+  @override
+  RadarChartStyle getRadarStyle(int radarIndex) {
+    switch (radarIndex) {
+      case 0:
+        return const RadarChartStyle(
+          strokeColor: Colors.blue,
+          areaColor: Color(0x332196F3),
+          dotted: true,
+          dotColor: Colors.blue,
+        );
+      case 1:
+        return const RadarChartStyle(
+          strokeColor: Colors.green,
+          areaColor: Color(0x334CAF50),
+          dotted: true,
+          dotColor: Colors.green,
+        );
+    }
+    return const RadarChartStyle(
+      strokeColor: Colors.blue,
+      strokeWidth: 1,
+      areaColor: Color(0x332196F3),
+      dotted: true,
+      dotColor: Colors.blue,
+      dotRadius: 2,
+    );
+  }
+
+  @override
+  List<double> getRadarValues(int radarIndex) {
+    switch (radarIndex) {
+      case 0:
+        return dataList1[sideCount.toString()]!;
+      case 1:
+        return dataList2[sideCount.toString()]!;
+    }
+    return dataList1[sideCount.toString()]!;
+  }
 }

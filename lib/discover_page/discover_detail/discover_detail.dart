@@ -94,4 +94,5 @@ class _DiscoverDetailPageState extends State<DiscoverDetailPage> {
       ),
     );
   }
+
 }
