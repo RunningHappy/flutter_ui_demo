@@ -25,6 +25,15 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
   late double padding;
   Map<String, List<double>> dataList1 = Map();
   Map<String, List<double>> dataList2 = Map();
+  List<DoughnutDataItem> dataList = [];
+  DoughnutDataItem? selectedItem;
+  List<Color> preinstallColors = [
+    Color(0xffFF862D),
+    Color(0xff26BB7D),
+    Color(0xffFFDD00),
+    Color(0xff6AA6FB),
+    Color(0xff0984F9),
+  ];
 
   @override
   void initState() {
@@ -49,6 +58,21 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
     animation = CurvedAnimation(parent: controller, curve: Curves.ease);
     animation = Tween(begin: 0.0, end: 1.0).animate(animation);
     controller.forward();
+    for (int i = 0; i < 5; i++) {
+      dataList.add(DoughnutDataItem(
+          title: '示例${i+1}',
+          value: random(1, 5).toDouble(),
+          color: getColorWithIndex(i)));
+    }
+  }
+
+  int random(int min, int max) {
+    final _random = Random();
+    return min + _random.nextInt(max - min + 1);
+  }
+
+  Color getColorWithIndex(int index) {
+    return this.preinstallColors[index % this.preinstallColors.length];
   }
 
   @override
@@ -147,6 +171,29 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
                   }
                 ),
                 SizedBox(height: 20.h,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    DoughnutChart(
+                      width: 200.h,
+                      height: 200.h,
+                      data: dataList,
+                      selectedItem: selectedItem,
+                      showTitleWhenSelected: true,
+                      selectCallback: (DoughnutDataItem? selectedItem) {
+                        setState(() {
+                          this.selectedItem = selectedItem;
+                        });
+                      },
+                    ),
+                    SizedBox(width: 30.w,),
+                    DoughnutChartLegend(
+                      data: this.dataList,
+                      legendStyle: DoughnutChartLegendStyle.list
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.h,),
                 CommonButton(buttonName: 'test', h: 45, isDisable: true, onPressed: (){
                   Navigator.push(context, MaterialPageRoute(
                     builder: (BuildContext context) {
@@ -161,7 +208,7 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
                       ]);
                       return SingleSelectCityPage(
                         appBarTitle: '城市单选',
-                        hotCityTitle: '这里是推荐城市',
+                        hotCityTitle: '热门城市',
                         hotCityList: hotCityList,
                         onValueChanged: (SelectCityModel model){
                           EasyLoading.showToast('${model.name}');

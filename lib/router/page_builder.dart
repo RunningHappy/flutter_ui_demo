@@ -2,8 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:new_project/utils/bundle_util.dart';
 
-typedef HandlerFunc = Widget? Function(
-    BuildContext? context, Map<String, List<String>> parameters);
+typedef HandlerFunc = Widget? Function(BuildContext? context, Map<String, List<String>> parameters);
 typedef PageBuilderFunc = Widget Function(Bundle bundle);
 
 class PageBuilder {

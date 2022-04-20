@@ -18,13 +18,11 @@ class BottomTabBar extends StatefulWidget {
 class _BottomTabBarState extends State<BottomTabBar> {
 
   /// 当前页面的索引
-  int _currentIndex = 0;
-  DateTime? _lastPopTime;
   final List<Widget> _pageList = [const HomePage(),const DiscoverPage(),const ActivityPage(),const MyPage()];
   final List<String> normalImage = ['images/bottombar/tab_bar_1_normal.png','images/bottombar/tab_bar_2_normal.png','images/bottombar/tab_bar_3_normal.png','images/bottombar/tab_bar_4_normal.png'];
   final List<String> activeImage = ['images/bottombar/tab_bar_1_select.png','images/bottombar/tab_bar_2_select.png','images/bottombar/tab_bar_3_select.png','images/bottombar/tab_bar_4_select.png'];
-  // final List<String> titles = ['首页','发现','消息','我的'];
-  final List<String> titles = [];
+  final List<String> titles = ['首页','发现','消息','我的'];
+  // final List<String> titles = [];
 
   @override
   void initState() {
@@ -38,12 +36,14 @@ class _BottomTabBarState extends State<BottomTabBar> {
       centerImage: 'images/bottombar/tab_bar_center_icon.png',
       normalBarImage: normalImage,
       activeBarImage: activeImage,
+      normalTitleColor: Colors.grey.withOpacity(.8),
+      activeTitleColor: Colors.deepPurpleAccent,
       barTitleList: titles,
       normalTitleSize: 10.sp,
       activeTitleSize: 10.sp,
       imageTitlePadding: 3.h,
       imageWidth: 24.h,
-      barHeight: 56.h,
+      barHeight: 65.h,
     );
   }
 }

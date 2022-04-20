@@ -12,7 +12,6 @@ import 'package:new_project/utils/fz_localizations_delegate.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
   runApp(MyApp());
 }
 
@@ -21,14 +20,11 @@ class MyApp extends StatelessWidget {
     /// 初始化路由
     final router = FluroRouter.appRouter;
     Application.configureRoutes(router);
-
     /// 这里设置项目环境
     Application.router = router;
-
     /// 透明状态栏
     if (Platform.isAndroid) {
-      SystemUiOverlayStyle systemUiOverlayStyle =
-      const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
   }
@@ -39,14 +35,14 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       builder: () => MaterialApp(
         debugShowCheckedModeBanner: false,
-        // title: Constant.PROJECT_NAME,
+        title: 'new_project',
         theme: ThemeData(
           fontFamily: "pingfang",
           primaryColor: const Color(0xFF177FF3),
           scaffoldBackgroundColor: const Color(0xFFF5F5F5),
           /// 对话框背景颜色
           dialogBackgroundColor: Colors.white,
-          // / 设置App导航栏主题
+          /// 设置App导航栏主题
           appBarTheme: const AppBarTheme(
             elevation: 0,
             centerTitle: true,
@@ -91,7 +87,6 @@ class MyApp extends StatelessWidget {
 /// 入口处
 class RootPage extends StatelessWidget {
   const RootPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return const SplashPage();
