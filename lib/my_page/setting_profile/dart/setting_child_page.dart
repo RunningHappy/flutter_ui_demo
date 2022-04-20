@@ -35,7 +35,7 @@ class _SettingChildPageState extends State<SettingChildPage> {
           CommonImgBtn(imgStr: 'images/home/home_detail_share.png',width: 24.h,),
           SizedBox(width: 16.w,),
         ]),
-        body: Column(
+        body: ListView(
           children: [
             SizedBox(
               width: double.infinity,
@@ -123,25 +123,35 @@ class _SettingChildPageState extends State<SettingChildPage> {
               ),
             ),
             SizedBox(height: 20.h,),
-            const RotatedBox(
-              quarterTurns: 1, // 90°的整数倍
-              child: Text('HELLO WORD !'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const RotatedBox(
+                  quarterTurns: 1, // 90°的整数倍
+                  child: Text('HELLO WORD !'),
+                )
+              ],
             ),
             SizedBox(height: 20.h,),
-            PopupMenuButton(
-              itemBuilder: (BuildContext context){
-                return [
-                  const PopupMenuItem(child: Text("DOTA"),value: "dota",),
-                  const PopupMenuItem(child: Text("英雄联盟"),value: ["盖伦", "皇子", "提莫"],),
-                  const PopupMenuItem(child: Text("王者荣耀"),value: {"name":"王者荣耀"},),
-                ];
-              },
-              child: Text(
-                '弹出菜单',
-                style: TextStyle(
-                  fontSize: 16.sp
-                ),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                PopupMenuButton(
+                  itemBuilder: (BuildContext context){
+                    return [
+                      const PopupMenuItem(child: Text("DOTA"),value: "dota",),
+                      const PopupMenuItem(child: Text("英雄联盟"),value: ["盖伦", "皇子", "提莫"],),
+                      const PopupMenuItem(child: Text("王者荣耀"),value: {"name":"王者荣耀"},),
+                    ];
+                  },
+                  child: Text(
+                    '弹出菜单',
+                    style: TextStyle(
+                        fontSize: 16.sp
+                    ),
+                  ),
+                )
+              ],
             ),
             SizedBox(height: 20.h,),
             Row(

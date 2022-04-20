@@ -72,7 +72,12 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
             width: double.infinity,
             child: ListView(
               children: [
-                const CommonWaterButton(Colors.blueAccent, innerIcon: Icon(Icons.call,color: Colors.white,), outSize: 65,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const CommonWaterButton(Colors.blueAccent, innerIcon: Icon(Icons.call,color: Colors.white,), outSize: 65,),
+                  ],
+                ),
                 SizedBox(height: 20.h,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -128,11 +133,14 @@ class _SettingDemoPageState extends State<SettingDemoPage> with SingleTickerProv
                       crossedAxisLine: true,
                       rotateAngle: angle! * 2 * pi / 360,
                       animateProgress: animation.value,
-                      axisLineColor: Colors.redAccent,
+                      axisLineColor: Colors.orangeAccent,
                       builder: (index) {
                         return Text(
                           '顶点${index.toString()}',
-                          style: const TextStyle(color: Colors.black, fontSize: 14),
+                          style: TextStyle(
+                            color: Colors.redAccent,
+                            fontSize: 12.sp
+                          ),
                         );
                       },
                     );
