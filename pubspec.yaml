@@ -53,10 +53,10 @@ dependencies:
   #图片放大查看
   photo_view: ^0.13.0
   app_assembly:
-#    git:
-#      url: git@gitlab.56hswl.com:lmp/app_assembly.git
-#      ref: master
-    path: ../app_assembly
+    git:
+      url: git@gitlab.56hswl.com:lmp/app_assembly.git
+      ref: master
+#    path: ../app_assembly
 
 dev_dependencies:
   flutter_test:
